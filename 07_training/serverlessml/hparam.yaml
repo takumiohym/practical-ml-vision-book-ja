@@ -1,0 +1,56 @@
+displayName: "FlowersHpTuningJob"
+maxTrialCount: 50
+parallelTrialCount: 2
+studySpec:
+  metrics:
+  - metricId: accuracy
+    goal: MAXIMIZE
+  parameters:
+  - parameterId: l2
+    scaleType: UNIT_LINEAR_SCALE
+    doubleValueSpec:
+      minValue: 0
+      maxValue: 0.2
+  - parameterId: batch_size
+    scaleType: SCALE_TYPE_UNSPECIFIED
+    discreteValueSpec:
+      values:
+      - 16
+      - 32
+      - 64
+  - parameterId: num_hidden
+    scaleType: SCALE_TYPE_UNSPECIFIED
+    discreteValueSpec:
+      values:
+      - 8
+      - 16
+      - 24
+  - parameterId: with_color_distort
+    scaleType: SCALE_TYPE_UNSPECIFIED
+    discreteValueSpec:
+      values:
+      - False
+      - True
+  - parameterId: crop_ratio
+    scaleType: UNIT_LINEAR_SCALE
+    doubleValueSpec:
+      minValue: 0.5
+      maxValue: 0.8
+  algorithm: ALGORITHM_UNSPECIFIED
+trialJobSpec:
+  baseOutputDirectory:
+    outputUriPrefix: gs://{BUCKET}/flowers_trained/hptune  # TODO: Add your bucket!
+  workerPoolSpecs:
+  - machineSpec:
+      machineType: n1-standard-4
+      acceleratorType: NVIDIA_TESLA_T4
+      acceleratorCount: 2
+    replicaCount: 1
+  pythonPackageSpec:
+    executorImageUri: us-docker.pkg.dev/vertex-ai/training/tf-cpu.2-4:latest
+    packageUris: gs://{BUCKET}/flowers-1.0.tar.gz  # TODO: Add your bucket!
+    pythonModule: flowers.classifier.train
+    args: 
+    - --pattern="-*"
+    - --num_epochs=20
+    - --distribute="cpu"
