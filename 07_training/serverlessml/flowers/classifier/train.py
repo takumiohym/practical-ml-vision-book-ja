@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
+# Copyright 2022 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License. You may obtain a copy of the License at
 # http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
@@ -13,7 +13,7 @@ import os, shutil
 import argparse
 import hypertune
 from distutils.util import strtobool
-from tensorflow.data.experimental import AUTOTUNE     
+from tensorflow.data import AUTOTUNE
 
 from flowers.utils.util import cleanup_dir, create_strategy
 from flowers.ingest.tfrecords import *

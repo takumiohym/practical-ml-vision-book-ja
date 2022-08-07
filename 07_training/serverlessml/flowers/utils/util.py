@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
+# Copyright 2022 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License. You may obtain a copy of the License at
 # http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
@@ -39,7 +39,7 @@ def create_strategy(mode):
         return tf.distribute.MirroredStrategy()
     elif mode == "gpus_multiple_machines":
         print("Using TFCONFIG=", os.environ["TF_CONFIG"])
-        return tf.distribute.experimental.MultiWorkerMirroredStrategy()
+        return tf.distribute.MultiWorkerMirroredStrategy()
     
     # treat as tpu
     if mode == "tpu_colab":
