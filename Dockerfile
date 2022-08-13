@@ -14,7 +14,7 @@
 
 
 # Builds a Docker image capable of running the code in the book
-FROM gcr.io/deeplearning-platform-release/tf2-gpu
+FROM gcr.io/deeplearning-platform-release/tf2-gpu.2-8
 
 RUN python3 -m pip install --upgrade apache-beam[gcp] cloudml-hypertune
 
