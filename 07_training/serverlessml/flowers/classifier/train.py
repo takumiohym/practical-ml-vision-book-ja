@@ -33,11 +33,11 @@ def train_and_evaluate(strategy, opts):
     train_dataset = create_preproc_dataset(
         os.path.join(opts['input_topdir'], 'train' + opts['pattern']),
         IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS
-    ).batch(opts['batch_size'])
+    ).batch(opts['batch_size'], drop_remainder=True)
     eval_dataset = create_preproc_dataset(
         os.path.join(opts['input_topdir'], 'valid' + opts['pattern']),
         IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS
-    ).batch(opts['batch_size'])
+    ).batch(opts['batch_size'], drop_remainder=True)
 
     # if number of training examples per epoch is specified
     # repeat the training dataset indefinitely
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     ## Training parameters
     parser.add_argument(
-        '--job-dir', help='Top-level output directory', required=True)
+        '--job_dir', help='Top-level output directory', required=True)
     parser.add_argument(
         '--input_topdir', help='Top-level directory of the TF Records',
         default='gs://practical-ml-vision-book/flowers_tfr'
