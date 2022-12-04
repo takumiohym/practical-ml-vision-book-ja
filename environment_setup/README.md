@@ -1,7 +1,8 @@
-# 環境設定
+# 環境の設定
 
-本レポジトリでは、第3章を除いてGPU環境での実行を想定しています。<br>
-大規模なモデルを扱う3章ではTPU環境での実行を前提にしています。（GPU上での実行は可能ですが、実行には時間がかかります。またメモリに応じてバッチサイズを小さくするなどの変更をする畢業があります。）
+本レポジトリでは、第3章を除いてGPU環境での実行を想定しています。
+
+大規模なモデルを扱う第3章のみTPU環境での実行を前提にしています。（GPU上での実行も可能ですが、実行には時間がかかります。またメモリに応じてバッチサイズを小さくするなどの変更をする必要があります。）
 
 詳しくは各章の`README.md`を参照してください。
 
@@ -32,11 +33,16 @@
 
 ### TPU 環境の作成
 1.  Google Cloudのアカウントを作成し、[Google Cloud Console](https://console.cloud.google.com/)へアクセス
+
 2.  コンソール右上の "Activate Cloud Shell"ボタンをクリックし、画面したに出てきたウィンドウ上で"Continue"をクリック
 <img width="1000" alt="image" src="https://user-images.githubusercontent.com/6895245/205494892-5a7d259e-31e0-44dd-8e08-5d41c846c4d8.png">
-3. [create_tpu_workbench.sh](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/environment_setup/create_tpu_workbench.sh) のコマンドをコピーし、Cloud Shell に貼り付けて実行
-4. 実行完了までにはしばらく時間がかかります。（コマンドでTPU中に取得でリソースエラーが出た場合は、再度実行するか、[リージョンやTPUのバージョンを変更](https://cloud.google.com/tpu/docs/regions-zones)して再実行してください。）
-5. 
+
+3.  [create_tpu_workbench.sh](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/environment_setup/create_tpu_workbench.sh) のコマンドをコピーし、Cloud Shell に貼り付けて実行<br>
+
+4.  実行完了までにはしばらく時間がかかります。コマンドでTPU中に取得でリソースエラーが出た場合は、再度実行するか、[リージョンやTPUのバージョンを変更](https://cloud.google.com/tpu/docs/regions-zones)して再実行してください。<br>
+
+5.  左上の "Navigation menu"をクリックしてサービス一覧を開き、"Vertex AI" -> "Workbench" を選択
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/6895245/205494431-3a1c9402-41cc-4d48-a00d-5a528f146885.png">
 
 ---
 
@@ -50,6 +56,6 @@
 ### TPUの場合
 2. "Runtime" -> "Change Runtime Typeを選択
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/6895245/205496474-2be9a38d-a0df-4bed-aaa3-bd4154677082.png">
-3. [Hardware Accelerator]ドロップダウンから[TPU]を選択
+3. [Hardware Accelerator]ドロップダウンから[TPU]を選択<br>
 4. ノートブックを実行
 
