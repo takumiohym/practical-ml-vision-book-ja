@@ -167,7 +167,7 @@ if __name__ == '__main__':
         'temp_location': os.path.join(OUTPUT_DIR, 'tmp'),
         'job_name': JOBNAME,
         'project': PROJECT,
-        'max_num_workers': 20, # autoscale up to 20
+        'max_num_workers': 1000, # autoscale up to 1000
         'region': arguments['region'],
         'teardown_policy': 'TEARDOWN_ALWAYS',
         'save_main_session': True

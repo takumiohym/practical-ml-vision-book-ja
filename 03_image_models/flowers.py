@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 from sklearn.metrics import f1_score, precision_score, recall_score, confusion_matrix
 print("Tensorflow version " + tf.__version__)
-AUTO = tf.data.experimental.AUTOTUNE
+AUTO = tf.data.AUTOTUNE
 
 try: # detect TPUs
     tpu = tf.distribute.cluster_resolver.TPUClusterResolver.connect()

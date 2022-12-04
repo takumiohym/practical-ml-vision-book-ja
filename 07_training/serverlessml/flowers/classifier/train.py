@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
+# Copyright 2022 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License. You may obtain a copy of the License at
 # http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
@@ -13,7 +13,7 @@ import os, shutil
 import argparse
 import hypertune
 from distutils.util import strtobool
-from tensorflow.data.experimental import AUTOTUNE     
+from tensorflow.data import AUTOTUNE
 
 from flowers.utils.util import cleanup_dir, create_strategy
 from flowers.ingest.tfrecords import *
@@ -33,11 +33,11 @@ def train_and_evaluate(strategy, opts):
     train_dataset = create_preproc_dataset(
         os.path.join(opts['input_topdir'], 'train' + opts['pattern']),
         IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS
-    ).batch(opts['batch_size'])
+    ).batch(opts['batch_size'], drop_remainder=True)
     eval_dataset = create_preproc_dataset(
         os.path.join(opts['input_topdir'], 'valid' + opts['pattern']),
         IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS
-    ).batch(opts['batch_size'])
+    ).batch(opts['batch_size'], drop_remainder=True)
 
     # if number of training examples per epoch is specified
     # repeat the training dataset indefinitely
@@ -97,7 +97,7 @@ if __name__ == '__main__':
 
     ## Training parameters
     parser.add_argument(
-        '--job-dir', help='Top-level output directory', required=True)
+        '--job_dir', help='Top-level output directory', required=True)
     parser.add_argument(
         '--input_topdir', help='Top-level directory of the TF Records',
         default='gs://practical-ml-vision-book/flowers_tfr'

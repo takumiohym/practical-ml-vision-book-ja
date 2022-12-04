@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Copyright 2020 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
+# Copyright 2022 Google Inc. Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License. You may obtain a copy of the License at
 # http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing,
 # software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES
@@ -10,7 +10,7 @@ import numpy as np
 import tensorflow as tf
 import tensorflow_hub as hub
 import os, shutil
-from tensorflow.data.experimental import AUTOTUNE
+from tensorflow.data import AUTOTUNE
 os.environ['TFHUB_MODEL_LOAD_FORMAT'] = 'COMPRESSED'
 
 from flowers.utils.augment import *
@@ -24,14 +24,14 @@ def create_model(opts, IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS):
     regularizer = tf.keras.regularizers.l1_l2(opts['l1'] or 0, opts['l2'] or 0)
     
     layers = [
-      tf.keras.layers.experimental.preprocessing.RandomCrop(
+      tf.keras.layers.RandomCrop(
           height=MODEL_IMG_SIZE, width=MODEL_IMG_SIZE,
           input_shape=(IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS),
           name='random/center_crop'
       ),
-      tf.keras.layers.experimental.preprocessing.RandomFlip(
+      tf.keras.layers.RandomFlip(
           mode='horizontal',
-          name='random_lr_flip/none'
+          name='random/random_lr_flip'
       )
     ]
     
@@ -97,4 +97,4 @@ def export_model(model, outdir, IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS):
 
 
 # ## License
-# Copyright 2020 Google Inc. Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+# Copyright 2022 Google Inc. Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

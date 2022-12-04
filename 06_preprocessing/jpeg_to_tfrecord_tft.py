@@ -45,18 +45,11 @@ from tfx_bsl.public import tfxio
 IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS = 448, 448, 3
 LABELS = []
 
-def _string_feature(value):
-    return tf.train.Feature(bytes_list=tf.train.BytesList(value=[value.encode('utf-8')]))
-
-def _int64_feature(value):
-    return tf.train.Feature(int64_list=tf.train.Int64List(value=value))
-
-def _float_feature(value):
-    return tf.train.Feature(float_list=tf.train.FloatList(value=value))
-
 def decode_image(img_bytes):
-    IMG_CHANNELS = 3
-    return tf.image.decode_jpeg(img_bytes, channels=IMG_CHANNELS)
+    img = tf.io.decode_jpeg(img_bytes, channels=IMG_CHANNELS)
+    img = tf.image.convert_image_dtype(img, tf.float32) # [0,1]
+    img = tf.image.resize_with_pad(img, IMG_HEIGHT, IMG_WIDTH)
+    return img
 
 def assign_record_to_split(rec):
     rnd = np.random.rand()
@@ -68,7 +61,6 @@ def assign_record_to_split(rec):
 
 def yield_records_for_split(x, desired_split):
     split, rec = x
-    # print(split, desired_split, split == desired_split)
     if split == desired_split:
         yield rec
 
@@ -84,16 +76,10 @@ def write_records(OUTPUT_DIR, splits, split):
              file_name_suffix='.gz', num_shards=nshards)
         )
 
-def decode_image(img_bytes):
-    img = tf.image.decode_jpeg(img_bytes, channels=IMG_CHANNELS)
-    return img
-
 def tft_preprocess(img_record): 
     # tft_preprocess gets a batch, but decode_jpeg can only read individual files
     img = tf.map_fn(decode_image, img_record['img_bytes'],
                     fn_output_signature=tf.float32)
-    img = tf.image.convert_image_dtype(img, tf.float32) # [0,1]
-    img = tf.image.resize_with_pad(img, IMG_HEIGHT, IMG_WIDTH)
     return {
         'image': img,
         'label': img_record['label'],
@@ -113,7 +99,7 @@ def create_input_record(filename, label):
     }
 
 def run_main(arguments):
-    global IMG_HEIGHT, IMG_WIDTH, IMG_CHANNELS, LABELS
+    global IMG_CHANNELS, LABELS
     
     JOBNAME = (
             'preprocess-images-' + datetime.datetime.now().strftime('%y%m%d-%H%M%S'))
@@ -168,18 +154,17 @@ def run_main(arguments):
         'project': PROJECT,
         'max_num_workers': 20, # autoscale up to 20
         'region': arguments['region'],
-        'teardown_policy': 'TEARDOWN_ALWAYS',
         'save_main_session': True,
         'requirements_file': 'requirements.txt'
     }
     opts = beam.pipeline.PipelineOptions(flags=[], **options)
 
-    RAW_DATA_SCHEMA = tft.tf_metadata.dataset_schema.schema_utils.schema_from_feature_spec({
+    RAW_DATA_SCHEMA = tft.tf_metadata.schema_utils.schema_from_feature_spec({
             'filename': tf.io.FixedLenFeature([], tf.string),
             'label': tf.io.FixedLenFeature([], tf.string),
         })
     IMG_BYTES_METADATA = tft.tf_metadata.dataset_metadata.DatasetMetadata(
-        tft.tf_metadata.dataset_schema.schema_utils.schema_from_feature_spec({
+        tft.tf_metadata.schema_utils.schema_from_feature_spec({
             'img_bytes': tf.io.FixedLenFeature([], tf.string),
             'label': tf.io.FixedLenFeature([], tf.string),
             'label_int': tf.io.FixedLenFeature([], tf.int64)
