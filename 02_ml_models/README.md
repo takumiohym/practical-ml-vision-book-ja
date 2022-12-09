@@ -5,9 +5,7 @@
 
 Vertex AI Workbench （推奨）やColabなどの環境でGPUを利用可能にした上で実行してください。
 
-設定方法は以下を確認ください。
-- Vertex AI Workbench
-- Colab
+設定方法は[実行環境のセットアップ](https://github.com/takumiohym/practical-ml-vision-book-ja/tree/main/environment_setup)を確認ください。
 
 ## TIPS
 GPUを利用した場合でも実行には時間がかかります。<br>
