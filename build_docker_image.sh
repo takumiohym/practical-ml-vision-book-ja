@@ -22,6 +22,9 @@ full_image_name=${image_name}:${image_tag}
 
 echo "Building ${full_image_name}"
 
+export DOCKER_BUILDKIT=1
+export BUILDKIT_PROGRESS=plain
+
 cd "$(dirname "$0")"
 docker build -t "${full_image_name}" .
 docker push "$full_image_name"

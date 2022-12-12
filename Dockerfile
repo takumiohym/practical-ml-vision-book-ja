@@ -16,12 +16,14 @@
 # Builds a Docker image capable of running the code in the book
 FROM gcr.io/deeplearning-platform-release/tf2-gpu.2-8
 
-RUN python3 -m pip install --upgrade apache-beam[gcp] cloudml-hypertune
+RUN pip install --upgrade apache-beam[gcp] cloudml-hypertune
 
 RUN mkdir -p /src/practical-ml-vision-book
 
-# copy all the chapters that start with 01_* 02_* etc.
-COPY . /src/practical-ml-vision-book/
+# copy some files to use in the pipeline
+COPY 05_create_dataset/jpeg_to_tfrecord.py /src/practical-ml-vision-book/05_create_dataset/
+
+COPY 10_mlops/components/create_dataset.sh /src/practical-ml-vision-book/10_mlops/components/
 
 RUN ls -l /src/practical-ml-vision-book/
 
