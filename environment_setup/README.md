@@ -1,14 +1,11 @@
 # 実行環境のセットアップ
 
-本レポジトリでは、第3章を除いてGPU環境での実行を想定しています。
+本レポジトリ内のほとんどのノートブックでは、GPUやTPUなどのアクセレレータを利用した実行を想定しています。
 
-大規模なモデルを扱う第3章のみTPU環境での実行を前提にしています。（GPU上での実行も可能ですが、実行には時間がかかります。またメモリに応じてバッチサイズを小さくするなどの変更をする必要があります。）
-
-詳しくは各章の`README.md`を参照してください。
-
-以下に、Google Cloud のノートブック実行環境 Vertex AI Workbenchと、Google Colaboratory での設定方法を記載します。
+ノートブック毎に推奨環境は異なりますので、詳しくは各章の`README.md`やノートブック内の記載を参照してください。
 
 ## 環境のセットアップ方法
+以下に、Google Cloud のノートブック実行環境 Vertex AI Workbenchと、Google Colaboratory での環境のセットアップ方法を記載します。
 - [Vertex AI Workbench を利用する場合](vertex_ai_workbench.md)
 - [Google Colaboratory を利用する場合](google_colab.md)
 
