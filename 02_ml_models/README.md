@@ -8,7 +8,7 @@ Vertex AI Workbench （推奨）やColabなどの環境でGPUを利用可能に�
 設定方法は[実行環境のセットアップ](https://github.com/takumiohym/practical-ml-vision-book-ja/tree/main/environment_setup)を確認ください。
 
 ## TIPS
-GPUを利用した場合でも実行には時間がかかります。<br>
-短い時間で確認したい場合は、エポック数を小さくするなどして対応してください。
+学習データは、`us-central1`リージョン（米国中部）のGoogle Cloud Storageに置かれています。
 
-また、実行済みのセルはすべて出力されていますので、実行せずにコードと結果の確認のみを行うこともできます。
+Vertex AI Workbenchのインスタンスを作成する際は、このリージョン内のゾーンを指定すると最も高速です。<br>
+Colabでは、実行環境のサーバの場所を指定することはできませんので、場合によっては学習に非常に時間がかかることがあります。
