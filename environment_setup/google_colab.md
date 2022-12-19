@@ -12,6 +12,6 @@
 
 2. "Runtime" -> "Change Runtime Typeを選択
 <img width="1284" alt="image" src="https://user-images.githubusercontent.com/6895245/205496474-2be9a38d-a0df-4bed-aaa3-bd4154677082.png">
-3. "Hardware Accelerator"ドロップダウンから、実行するノートブックに応じて"GPU"か"TPU"（第三章のみ）を選択<br>
+3. "Hardware Accelerator"ドロップダウンから、実行するノートブックに応じて"GPU"か"TPU"を選択<br>
 4. Colab Proの場合、さらに"GPU class"と"Runtime shape"を指定することができます。高性能な"Premium"と"High-RAM"を選択してください。
 <img width="400" alt="image" src="https://user-images.githubusercontent.com/6895245/205500463-56a2c21d-c3a9-4171-9f17-198f98112859.png">
