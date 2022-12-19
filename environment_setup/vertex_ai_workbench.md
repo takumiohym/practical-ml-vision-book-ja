@@ -18,9 +18,8 @@ GPUとTPUとで方法が異なるので注意してください。
 3. "NEW NOTEBOOK" -> "TensorFlow Enterprise" -> "TensorFlow Enterprize 2.8 (with LTS) -> "With NVIDIA T4" を順に選択（他のGPUを利用したい場合は、Advanced Optionから任意のGPUを選択してください）
 <img width="1000" alt="image" src="https://user-images.githubusercontent.com/6895245/205494561-60bcb1f5-d4e1-4ff2-8714-a0f4527e2c1e.png">
 
-4. "Install NVIDIA GPU driver automatically for me" にチェックを入れ、"CREATE"をクリック。（RegionやZoneはデフォルトのままが推奨）
-<img width="1000" alt="image" src="https://user-images.githubusercontent.com/6895245/205494687-f8b4dd41-f635-4622-856c-2b832466ee46.png">
-
+4. "Region"には"us-central1"を指定し（ゾーンはいずれでもかまいません）、"Install NVIDIA GPU driver automatically for me" にチェックを入れ、"CREATE"をクリック。
+<img width="1000" alt="image" src="https://user-images.githubusercontent.com/6895245/208476587-fc45e556-7608-4427-ae3a-43d96b1d189e.png">
 ---
 
 ### TPU 環境を利用する場合
