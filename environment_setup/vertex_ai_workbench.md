@@ -5,12 +5,22 @@
   - [Vertex AI Workbench 料金](https://cloud.google.com/vertex-ai/pricing#user-managed-notebooks)
   - [使用するインスタンスやGPUに関する料金](https://cloud.google.com/compute/all-pricing)
   - [Google Cloud Price Calculator](https://cloud.google.com/products/calculator)
+- 利用していないときは、インスタンスを停止しておくとよいでしょう。GPUを利用している場合は、Vertex AI Workbenchのマシンを直接停止するだけで問題ありませんですが、TPUを利用する場合はリモートのTPUクラスタも停止する必要があります。[tpu_script](./tpu_script)内に、停止、再起動、削除用のコマンドを用意しておきましたので、こちらを利用するようにすると安全です。
 
-## セットアップ
+## セットアップ手順
 以下に、Vertex AI Workbench 環境のセットアップ方法を示します。<br>
 GPUとTPUとで方法が異なるので注意してください。
 
-### GPU 環境を利用する場合
+
+---
+1. [ノートブック環境の作成](https://github.com/takumiohym/practical-ml-vision-book-ja/edit/main/environment_setup/vertex_ai_workbench.md#1-%E3%83%8E%E3%83%BC%E3%83%88%E3%83%96%E3%83%83%E3%82%AF%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90)
+  - [GPU 環境を利用する場合](https://github.com/takumiohym/practical-ml-vision-book-ja/edit/main/environment_setup/vertex_ai_workbench.md#1-%E3%83%8E%E3%83%BC%E3%83%88%E3%83%96%E3%83%83%E3%82%AF%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90)
+  - [TPU 環境を利用する場合](https://github.com/takumiohym/practical-ml-vision-book-ja/edit/main/environment_setup/vertex_ai_workbench.md#1-%E3%83%8E%E3%83%BC%E3%83%88%E3%83%96%E3%83%83%E3%82%AF%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90)
+2. [レポジトリのクローン](https://github.com/takumiohym/practical-ml-vision-book-ja/edit/main/environment_setup/vertex_ai_workbench.md#1-%E3%83%8E%E3%83%BC%E3%83%88%E3%83%96%E3%83%83%E3%82%AF%E7%92%B0%E5%A2%83%E3%81%AE%E4%BD%9C%E6%88%90)
+---
+
+### 1. ノートブック環境の作成
+#### GPU 環境を利用する場合
 1.  Google Cloudのアカウントを作成し、[Google Cloud Console](https://console.cloud.google.com/)へアクセス
 2.  左上の "Navigation menu"をクリックしてサービス一覧を開き、"Vertex AI" -> "Workbench" を選択
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494431-3a1c9402-41cc-4d48-a00d-5a528f146885.png">
@@ -24,13 +34,13 @@ GPUとTPUとで方法が異なるので注意してください。
 5. 数分待ち、インスタンスが作成されたら表示されている `OPEN JUPYTERLAB`をクリック
 ---
 
-### TPU 環境を利用する場合
+#### TPU 環境を利用する場合
 1.  Google Cloudのアカウントを作成し、[Google Cloud Console](https://console.cloud.google.com/)へアクセス
 
 2.  コンソール右上の "Activate Cloud Shell"ボタンをクリックし、画面したに出てきたウィンドウ上で"Continue"をクリック
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494892-5a7d259e-31e0-44dd-8e08-5d41c846c4d8.png">
 
-3.  [create_tpu_workbench.sh](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/environment_setup/create_tpu_workbench.sh) のコマンドをコピーし、Cloud Shell に貼り付けて実行<br>
+3.  [tpu_scripts/create_tpu_workbench.sh](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/environment_setup/tpu_scripts/create_tpu_workbench.sh) のコマンドをコピーし、Cloud Shell に貼り付けて実行<br>
 
 4.  実行完了までにはしばらく時間がかかります。コマンドでTPU中に取得でリソースエラーが出た場合は、再度実行するか、コマンド内の[リージョンやTPUのバージョンを変更](https://cloud.google.com/tpu/docs/regions-zones)して再実行してください。<br>
 
@@ -38,7 +48,7 @@ GPUとTPUとで方法が異なるので注意してください。
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494431-3a1c9402-41cc-4d48-a00d-5a528f146885.png">
 
 
-### GPU TPU 共通
+### 2.レポジトリのクローン
 6. JupyterLabを開いたら、`Terminal`をクリック
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208481492-b160e77f-3047-49fe-8a8f-5c2d492169d8.png">
 
@@ -47,6 +57,8 @@ GPUとTPUとで方法が異なるので注意してください。
 
 8. 左側ウィンドウに表示される`practical-ml-vision-book-ja`から各ノートブックファイルにアクセスし、上から順に実行する。
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208482440-acf502a5-e41a-4429-8931-35a4c80d7bdc.png">
+
+
 
 ## トラブルシューティング
 - メモリエラー等が発生する
