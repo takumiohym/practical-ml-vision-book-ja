@@ -5,7 +5,8 @@
   - [Vertex AI Workbench 料金](https://cloud.google.com/vertex-ai/pricing#user-managed-notebooks)
   - [使用するインスタンスやGPUに関する料金](https://cloud.google.com/compute/all-pricing)
   - [Google Cloud Price Calculator](https://cloud.google.com/products/calculator)
-- 利用していないときは、インスタンスを停止しておくとよいでしょう。GPUを利用している場合は、Vertex AI Workbenchのマシンを直接停止するだけで問題ありませんですが、TPUを利用する場合はリモートのTPUクラスタも停止する必要があります。[tpu_script](./tpu_script)内に、停止、再起動、削除用のコマンドを用意しておきましたので、こちらを利用するようにすると安全です。
+- 利用していないときはインスタンスを停止しておくと費用が発生しません。GPUを利用している場合は、Vertex AI Workbenchのインスタンスを停止するだけで問題ありませんですが、TPUを利用する場合は、Workbenchインスタンスの他にリモートのTPUクラスタも停止する必要があります。
+  - [tpu_script](./tpu_script)内に、WorkbenchインスタンスとTPUクラスタの停止、再起動、削除を行うコマンドを用意しておきましたので、TPUを使用している際はこちらを利用するようにすると安全です。
 
 ## セットアップ手順
 以下に、Vertex AI Workbench 環境のセットアップ方法を示します。<br>
@@ -62,6 +63,7 @@ GPUとTPUとで方法が異なるので注意してください。
 
 ## トラブルシューティング
 - メモリエラー等が発生する
-  - 別プロセスでリソースが使用されている可能性があります。別のノートブックを実行する際には、他のプロセスを閉じてから次に進むようにしてください。
+  - 環境によってはそのままでは動作しないことがあります。適宜各章のREADMEファイルと、ノートブック内のインストラクションを確認して進めてください。
+  - GPU環境の場合は、別プロセスでリソースが使用されいて不足している際にも発生します。新しいノートブックを実行する際には、他のプロセスを閉じてから次に進むようにしてください。
 <img width="716" alt="image" src="https://user-images.githubusercontent.com/6895245/205499809-d5d1082f-8a0b-43c1-ae96-825d766f5b38.png">
 
