@@ -1,7 +1,7 @@
 MACHINE_NAME=tpu-notebook
 TPU_NAME=vertex-wb-tpu
 
-TPU_TYPE=v3-8
+TPU_TYPE=v3-8 # v2-8 is more available usually.
 ZONE=us-central1-b # TPU availability: https://cloud.google.com/tpu/docs/regions-zones
 MACHINE_TYPE=n1-standard-8
 
