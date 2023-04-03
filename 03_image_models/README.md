@@ -7,7 +7,7 @@
 
 ## 実行環境
 大規模なモデルを利用するため、Vertex AI Workbenchでの**TPU v3**での実行を想定して実装されています。<br>
-GPUや、Colabから利用できるTPU v2でも動作しますが、実行に時間がかかるほか、モデルによってはメモリ不足による`ResourceExhaustedError`が出るものがあります。<br>
+GPUや、Colabから利用できるTPU v2でも動作しますが、実行に時間がかかるほか、モデルによってはメモリ不足による`ResourceExhaustedError`が発生するものがあります。<br>
 その際は、ノートブック内で定義されているいくつかのパラメータを変更して実行することで対応してください。（詳細は各ノートブックを参照してください）
 
 Vertex AI WorkbenchでTPU v3を利用する際は[こちら](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/environment_setup/vertex_ai_workbench.md#tpu-%E7%92%B0%E5%A2%83%E3%82%92%E5%88%A9%E7%94%A8%E3%81%99%E3%82%8B%E5%A0%B4%E5%90%88)の手順を参照の上、[TPU使用料金](https://cloud.google.com/tpu/pricing)に注意して行ってください。
