@@ -1,6 +1,10 @@
 # 第3章: イメージビジョン
 本章では、様々な画像分類モデルを利用して学習やファインチューニングを行います。
 
+## TIPS
+本章のノートブックは、モデル以外はほとんど同じ手順をたどります。<br>
+実際の実行には時間やコストがかかるため、どれか一つのモデル（比較的軽量な[03k_finetune_MOBILENETV2_flowers104.ipynb](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/03_image_models/03k_finetune_MOBILENETV2_flowers104.ipynb)などがおすすめです。こちらはColab のTPU v2、GPUでも動作します。）のみを実行し、他はモデルと出力されている結果とを比較するだけにすると効率的です。
+
 ## 実行環境
 大規模なモデルを利用するため、Vertex AI Workbenchでの**TPU v3**での実行を想定して実装されています。<br>
 GPUや、Colabから利用できるTPU v2でも動作しますが、実行に時間がかかるほか、モデルによってはメモリ不足による`ResourceExhaustedError`が出るものがあります。<br>
@@ -10,6 +14,3 @@ Vertex AI WorkbenchでTPU v3を利用する際は[こちら](https://github.com/
 
 その他の環境を利用する場合は、[実行環境のセットアップ](https://github.com/takumiohym/practical-ml-vision-book-ja/tree/main/environment_setup)の手順を確認ください。
 
-## TIPS
-本章のノートブックは、モデル以外はほとんど同じ手順をたどります。<br>
-実際の実行には時間やコストがかかるため、どれか一つのモデル（比較的軽量な[03k_finetune_MOBILENETV2_flowers104.ipynb](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/03_image_models/03k_finetune_MOBILENETV2_flowers104.ipynb)などがおすすめです。こちらはColab のTPU v2、GPUでも動作します。）のみを実行し、他はモデルと出力されている結果とを比較するだけにすると効率的です。
