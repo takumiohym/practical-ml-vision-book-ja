@@ -11,7 +11,7 @@ Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 コードは章ごとのディレクトリに格納されており、各章ごとに実行環境に関する`README.md`が用意されています。
 
 ## 実行環境
-日本語版では、コードはVertex AI Workbench、Colabで実行できるように構築、アップデートされています。<br>
+日本語版では、コードはVertex AI Workbench（推奨）、Colabで実行できるように構築、アップデートされています。<br>
 環境構築の詳細は、[こちらのガイド](https://github.com/takumiohym/practical-ml-vision-book-ja/tree/main/environment_setup)を参照してください。
 
 **注: 実行に関して発生する各サービスの費用については、本書では責任を負いません。事前に環境についてのドキュメントを参照してから利用してください。**
