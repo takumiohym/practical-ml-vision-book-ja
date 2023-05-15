@@ -25,8 +25,10 @@ Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 - Vertex AI Workbenchで`Out of memory` エラーや `ResourceExausted` エラーが発生する。
   - ノートブックのUIから、他のノートブックプロセスが実行されていないことを確認してください。実行されている場合はシャットダウンしてから次のノートブックを利用するようにしてください。
   - それでも治らない場合は、各章の`README.md`やノートブック内に記載されている注意点を確認の上、必要な変更（バッチサイズを小さくするなど）を加えた上で再実行してください。
-- Colab で `Authorization Issue` や `Permission Issue` が発生する。
+- Colabで `Authorization Issue` や `Permission Issue` が発生する。
   - Google Cloud に関連するサービスからのエラーの可能性があります。基本的にはノートブック内に必要な設定や認証方法が記載されていますので、そちらを実行しているか確認してください。それでも治らない場合は、Google Cloudで特別な設定（社用環境での特別なアクセス制限など）がされていないことを確認してください。
+- Colabでの実行がVertex AI Workbenchでの実行より遅い
+  - 学習データは、us-central1リージョン（米国中部）のGoogle Cloud Storageに置かれています。そのため、Vertex AI Workbenchではインスタンスをこのリージョン内のゾーンを指定することで高速にデータ読み込みが可能です。しかしColabでは、実行環境のサーバの場所を指定することはできませんので、場合によっては学習に非常に時間がかかることがあります。
 
 その他のフィードバックは、本レポジトリのIssueやPRでお知らせください。
 
