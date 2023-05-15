@@ -28,7 +28,7 @@ Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 - Colabで `Authorization Issue` や `Permission Issue` が発生する。
   - Google Cloud に関連するサービスからのエラーの可能性があります。基本的にはノートブック内に必要な設定や認証方法が記載されていますので、そちらを実行しているか確認してください。それでも治らない場合は、Google Cloudで特別な設定（社用環境での特別なアクセス制限など）がされていないことを確認してください。
 - Colabでの実行がVertex AI Workbenchでの実行より遅い
-  - 学習データは、us-central1リージョン（米国中部）のGoogle Cloud Storageに置かれています。そのため、Vertex AI Workbenchではインスタンスをこのリージョン内のゾーンを指定することで高速にデータ読み込みが可能です。しかしColabでは、実行環境のサーバの場所を指定することはできませんので、場合によっては学習に非常に時間がかかることがあります。
+  - 学習データは、Google Cloudの`us-central1`リージョン（米国中部）のGoogle Cloud Storageに置かれています。そのため、Vertex AI Workbenchではインスタンスをこのリージョン内のゾーンを指定することで高速にデータ読み込みが可能です。しかしColabでは、実行環境のサーバの場所を指定することはできませんので、場合によっては学習に非常に時間がかかることがあります。
 
 その他のフィードバックは、本レポジトリのIssueやPRでお知らせください。
 
