@@ -6,7 +6,7 @@
   - [使用するインスタンスやGPUに関する料金](https://cloud.google.com/compute/all-pricing)
   - [Google Cloud Price Calculator](https://cloud.google.com/products/calculator)
 - 利用していないときはインスタンスを停止しておくと費用が発生しません。GPUを利用している場合は、Vertex AI Workbenchのインスタンスを停止するだけで問題ありませんですが、TPUを利用する場合は、Workbenchインスタンスの他にリモートのTPUクラスタも停止する必要があります。
-  - [tpu_script](./tpu_script)内に、WorkbenchインスタンスとTPUクラスタの停止、再起動、削除を行うコマンドを用意しておきましたので、TPUを使用している際はこちらを利用するようにすると安全です。
+  - [tpu_script](./tpu_script)内に、WorkbenchインスタンスとTPUクラスタの停止、再起動、削除を行うコマンドを格納しています。TPUを使用している際はこちらを利用するようにすると安全です。
 
 ## セットアップ手順
 以下に、Vertex AI Workbench 環境のセットアップ方法を示します。<br>
