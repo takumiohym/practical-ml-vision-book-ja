@@ -19,7 +19,7 @@ Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 また、各ノートブックごとに、必要ライブラリや利用可能なアクセレレータ(GPU/TPU)に違いがあります。<br>
 こちらは各章のディレクトリ内の`README.md`と、ノートブック内の記載を参照して実行してください。
 
-本書で中心的に扱われているTensorFlowについては、日本語版では2.8x および2.9x での実行を前提にアップデート及びテストされています。
+本書で中心的に扱われているTensorFlowについては、日本語版では2.8.xおよび2.9.xでの実行を前提にアップデート及びテストされています。
 
 ## よくある質問、トラブルシューティング
 - Vertex AI Workbenchで`Out of memory` エラーや `ResourceExausted` エラーが発生する。
