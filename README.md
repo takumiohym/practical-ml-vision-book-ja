@@ -1,4 +1,4 @@
-# (仮) コンピュータビジョンのための実践的機械学習
+# コンピュータビジョンのための実践的機械学習
 Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 大山匠 監訳、松田晃一 訳
 
