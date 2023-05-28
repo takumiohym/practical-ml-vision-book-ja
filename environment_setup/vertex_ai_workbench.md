@@ -53,7 +53,12 @@ GPUとTPUとで方法が異なるので注意してください。
 6. JupyterLabを開いたら、`Terminal`をクリック
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208481492-b160e77f-3047-49fe-8a8f-5c2d492169d8.png">
 
-7. ターミナル内で、`git clone https://github.com/takumiohym/practical-ml-vision-book-ja` コマンドを実行し、このレポジトリをクローン。
+7. ターミナル内で以下のコマンドを実行。
+```
+git clone https://github.com/takumiohym/practical-ml-vision-book-ja
+export PATH=$PATH:~/.local/bin
+
+```
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208482015-11862333-b786-4863-a4f0-fbdf5378ac7c.png">
 
 8. 左側ウィンドウに表示される`practical-ml-vision-book-ja`から各ノートブックファイルにアクセスし、上から順に実行する。
