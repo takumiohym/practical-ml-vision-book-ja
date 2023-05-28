@@ -57,6 +57,7 @@ GPUとTPUとで方法が異なるので注意してください。
 ```
 git clone https://github.com/takumiohym/practical-ml-vision-book-ja
 export PATH=$PATH:~/.local/bin
+sudo apt-get install graphviz -y
 
 ```
 > <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208482015-11862333-b786-4863-a4f0-fbdf5378ac7c.png">
