@@ -14,11 +14,21 @@
 # limitations under the License.
 
 PROJECT_ID=$(gcloud config config-helper --format "value(configuration.properties.core.project)")
-CONTAINER_NAME="practical-ml-vision-book"
+REPOSITORY_NAME=practical-ml-vision-book
 
-image_name="gcr.io/${PROJECT_ID}/${CONTAINER_NAME}"
+image_name=us-docker.pkg.dev/${PROJECT_ID}/${REPOSITORY_NAME}
 image_tag=latest
-full_image_name=${image_name}:${image_tag}
+full_image_name=${image_name}/mlops:${image_tag}
+
+if gcloud artifacts repositories describe $REPOSITORY_NAME --location=us > /dev/null 2>&1; then
+    echo 'repository already exists'
+else
+    gcloud artifacts repositories create $REPOSITORY_NAME \
+        --repository-format=docker \
+        --location=us
+fi
+
+y >> /dev/null 2>&1 | gcloud auth configure-docker us-docker.pkg.dev
 
 echo "Building ${full_image_name}"
 

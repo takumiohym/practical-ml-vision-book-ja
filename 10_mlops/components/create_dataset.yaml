@@ -11,7 +11,7 @@ outputs:
 - {name: tfrecords_topdir, type: String, description: 'Top-level directory for TF records'}
 implementation:
   container:
-    image: gcr.io/ai-analytics-solutions/practical-ml-vision-book:latest
+    image: us-docker.pkg.dev/project-id/practical-ml-vision-book/mlops
     command: [
         'bash', '/src/practical-ml-vision-book/10_mlops/components/create_dataset.sh'
     ]
