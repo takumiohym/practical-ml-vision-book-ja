@@ -14,5 +14,5 @@ setup(
     packages=find_packages(),
     author='Practical ML Vision Book',
     author_email='abc@nosuchdomain.com',
-    install_requires=['cloudml-hypertune']
+    install_requires=['cloudml-hypertune', 'tensorflow_hub']
 )
