@@ -26,6 +26,4 @@ COPY 10_mlops/requirements.txt /tmp/requirements.txt
 
 RUN pip install -r /tmp/requirements.txt
 
-RUN ls -l /src/practical-ml-vision-book/
-
 WORKDIR /src/practical-ml-vision-book
