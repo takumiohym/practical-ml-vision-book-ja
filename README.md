@@ -2,7 +2,7 @@
 Valliappa Lakshmanan, Martin Gorner, Ryan Gillard 著<br>
 大山匠 監訳、松田晃一 訳
 
-<a href="[https://www.amazon.com/Practical-Machine-Learning-Computer-Vision/dp/1098102363](https://www.amazon.co.jp/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92-%E2%80%95%E3%83%A2%E3%83%87%E3%83%AB%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E3%81%8B%E3%82%89MLOps%E3%81%BE%E3%81%A7-Valliappa-Lakshmanan/dp/4814400381)">
+<a href="https://www.amazon.co.jp/%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%83%93%E3%82%B8%E3%83%A7%E3%83%B3%E3%81%AE%E3%81%9F%E3%82%81%E3%81%AE%E5%AE%9F%E8%B7%B5%E6%A9%9F%E6%A2%B0%E5%AD%A6%E7%BF%92-%E2%80%95%E3%83%A2%E3%83%87%E3%83%AB%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3%E3%81%8B%E3%82%89MLOps%E3%81%BE%E3%81%A7-Valliappa-Lakshmanan/dp/4814400381">
 <img src="images/cover.jpg" height="500" /></a>
 
 
