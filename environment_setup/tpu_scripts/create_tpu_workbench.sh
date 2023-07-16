@@ -8,7 +8,7 @@ MACHINE_TYPE=n1-standard-8
 gcloud config set compute/zone $ZONE
 
 while ! gcloud compute tpus create $TPU_NAME \
-    --version 2.11.1 \
+    --version 2.12.0 \
     --accelerator-type $TPU_TYPE
 do
     echo 'retry TPU creation'
@@ -18,7 +18,7 @@ done
 gcloud compute instances create $MACHINE_NAME \
     --machine-type  $MACHINE_TYPE \
     --image-project deeplearning-platform-release \
-    --image-family tf-ent-2-11-cpu \
+    --image-family tf-ent-2-12-cpu-debian-11-py310 \
     --scopes cloud-platform \
     --metadata proxy-mode=project_editors,startup-script="echo \"export TPU_NAME=$TPU_NAME\" > /etc/profile.d/tpu-env.sh;" \
     --zone $ZONE
