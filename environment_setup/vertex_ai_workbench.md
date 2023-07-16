@@ -24,13 +24,13 @@ GPUとTPUとで方法が異なるので注意してください。
 #### GPU 環境を利用する場合
 1.  Google Cloudのアカウントを作成し、[Google Cloud Console](https://console.cloud.google.com/)へアクセス
 2.  左上の "Navigation menu"をクリックしてサービス一覧を開き、"Vertex AI" -> "Workbench" を選択
-> <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494431-3a1c9402-41cc-4d48-a00d-5a528f146885.png">
+> <img width="750" alt="image" src="https://github.com/takumiohym/practical-ml-vision-book-ja/assets/6895245/139270c3-4ce6-4835-8a31-30ee043bb3ce">
 
-3. "NEW NOTEBOOK" -> "TensorFlow Enterprise" -> "TensorFlow Enterprize 2.8 (with LTS) -> "With NVIDIA T4" を順に選択（他のGPUを利用したい場合は、Advanced Optionから任意のGPUを選択してください）
-> <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494561-60bcb1f5-d4e1-4ff2-8714-a0f4527e2c1e.png">
+3. "NEW NOTEBOOK" -> "TensorFlow Enterprise" -> "TensorFlow Enterprize 2.12 -> "With NVIDIA T4" を順に選択（他のGPUを利用したい場合は、Advanced Optionから任意のGPUを選択してください）
+> <img width="750" alt="image" src="https://github.com/takumiohym/practical-ml-vision-book-ja/assets/6895245/95af7693-b629-4fcd-9817-50d14d2831bc">
 
-4. "Region"には"us-central1"を指定し（ゾーンはいずれでもかまいません）、"Install NVIDIA GPU driver automatically for me" にチェックを入れ、"CREATE"をクリック。
-> <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/208476587-fc45e556-7608-4427-ae3a-43d96b1d189e.png">
+4. "Region"には`us-central1`を指定し（"Zone"はいずれでもかまいません）、"Install NVIDIA GPU driver automatically for me" にチェックを入れ、"CREATE"をクリック。
+> <img width="750" alt="image" src="https://github.com/takumiohym/practical-ml-vision-book-ja/assets/6895245/513a881b-b982-4e9a-900d-ab1a9364d753">
 
 5. 数分待ち、インスタンスが作成されたら表示されている `OPEN JUPYTERLAB`をクリック
 ---
@@ -46,7 +46,8 @@ GPUとTPUとで方法が異なるので注意してください。
 4.  実行完了までにはしばらく時間がかかります。コマンドでTPU中に取得でリソースエラーが出た場合は、再度実行するか、コマンド内の[リージョンやTPUのバージョンを変更](https://cloud.google.com/tpu/docs/regions-zones)して再実行してください。<br>
 
 5.  左上の "Navigation menu"をクリックしてサービス一覧を開き、"Vertex AI" -> "Workbench" へ遷移し、作成されたインスタンスに表示されている `OPEN JUPYTERLAB`をクリック
-> <img width="750" alt="image" src="https://user-images.githubusercontent.com/6895245/205494431-3a1c9402-41cc-4d48-a00d-5a528f146885.png">
+> <img width="750" alt="image" src="https://github.com/takumiohym/practical-ml-vision-book-ja/assets/6895245/139270c3-4ce6-4835-8a31-30ee043bb3ce">
+> <img width="750" alt="image" src="https://github.com/takumiohym/practical-ml-vision-book-ja/assets/6895245/8e2a05e8-e9ce-41b8-aeb1-1697400c0573">
 
 
 ### 2.レポジトリのクローン
