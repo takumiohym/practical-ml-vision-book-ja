@@ -6,4 +6,4 @@
 
 Vertex AI Workbench、Colabの利用方法は、[実行環境のセットアップ](https://github.com/takumiohym/practical-ml-vision-book-ja/tree/main/environment_setup)の手順を確認ください。
 
-デプロイに使用するモデルは第７章で学習したものを利用しますが、ここではパブリックの `gs://asl-public/practical-ml-vision-book/flowers_5_trained`を利用しますので、独立して実行することができます。
+デプロイに使用するモデルは第７章で学習したものを利用しますが、ここではパブリックの `gs://practical-ml-vision-book/flowers_5_trained`を利用しますので、独立して実行することができます。

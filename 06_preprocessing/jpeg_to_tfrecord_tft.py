@@ -17,8 +17,8 @@ Modify the constants and TF Record format as needed.
 
 Example usage:
 python3 -m jpeg_to_tfrecord_tft \
-       --all_data gs://asl-public/practical-ml-vision-book/flowers_5_jpeg/flower_photos/all_data.csv \
-       --labels_file gs://asl-public/practical-ml-vision-book/flowers_5_jpeg/flower_photos/dict.txt \
+       --all_data gs://practical-ml-vision-book/flowers_5_jpeg/flower_photos/all_data.csv \
+       --labels_file gs://practical-ml-vision-book/flowers_5_jpeg/flower_photos/dict.txt \
        --project_id $PROJECT \
        --output_dir gs://${BUCKET}/data/flower_tfrecords \
        --resize 448,448
