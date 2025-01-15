@@ -22,4 +22,4 @@ Vertex AI Workbench、Colabの利用方法は、[実行環境のセットアッ�
     - [../05_create_dataset/jpeg_to_tfrecord.py](https://github.com/takumiohym/practical-ml-vision-book-ja/blob/main/05_create_dataset/jpeg_to_tfrecord.py): デートセット作成コンポーネントが実際に使用するApache Beamパイプライン定義が記載されたファイル。５章で使用したものです。
   - パイプラインの実行には、サーバレスのVertex AI Pipelinesを利用します。
 - `10b_explain.ipynb`
-  - 説明性を得るためのモデルには、7章で使用したモデルを使用します。ここではパブリックの `gs://practical-ml-vision-book/flowers_5_trained`バケットに保存されているファイルを利用しますので、独立して実行することができます。
+  - 説明性を得るためのモデルには、7章で使用したモデルを使用します。ここではパブリックの `gs://practical-ml-vision-book-data/flowers_5_trained`バケットに保存されているファイルを利用しますので、独立して実行することができます。
